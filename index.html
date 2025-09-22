@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore - Member Registration</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-book"></i>
+                <h1>BookStore</h1>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Books</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Contact</a>
+                <a href="#" class="nav-link login-btn">Login</a>
+            </nav>
+        </header>
+
+        <!-- Main Registration Section -->
+        <main class="main-content">
+            <div class="registration-container">
+                <div class="registration-header">
+                    <h2>Create Your Account</h2>
+                    <p>Join our community to start purchasing books online</p>
+                </div>
+
+                <!-- Member Type Selection -->
+                <div class="member-type-selection">
+                    <h3>Select Member Type</h3>
+                    <div class="type-cards">
+                        <div class="type-card active" data-type="general">
+                            <div class="card-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h4>General User</h4>
+                            <p>For individual book buyers</p>
+                        </div>
+                        <div class="type-card" data-type="student">
+                            <div class="card-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>Student</h4>
+                            <p>Special discounts for students</p>
+                        </div>
+                        <div class="type-card" data-type="store">
+                            <div class="card-icon">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <h4>Store</h4>
+                            <p>For business book retailers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <form class="registration-form" id="registrationForm">
+                    <!-- General User Form -->
+                    <div class="form-section active" id="generalForm">
+                        <h3>General User Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="generalName">
+                                    <i class="fas fa-user"></i>
+                                    First Name *
+                                </label>
+                                <input type="text" id="generalName" name="name" placeholder="Enter your first name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="generalSurname">
+                                    <i class="fas fa-user"></i>
+                                    Last Name *
+                                </label>
+                                <input type="text" id="generalSurname" name="surname" placeholder="Enter your last name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="generalNationalId">
+                                    <i class="fas fa-id-card"></i>
+                                    National ID Card Number *
+                                </label>
+                                <input type="text" id="generalNationalId" name="nationalId" placeholder="Enter your national ID" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="generalPhone">
+                                    <i class="fas fa-phone"></i>
+                                    Phone Number *
+                                </label>
+                                <input type="tel" id="generalPhone" name="phone" placeholder="123-456-7890" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="generalDob">
+                                    <i class="fas fa-calendar"></i>
+                                    Date of Birth *
+                                </label>
+                                <input type="date" id="generalDob" name="dateOfBirth" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="generalEmail">
+                                    <i class="fas fa-envelope"></i>
+                                    Email Address *
+                                </label>
+                                <input type="email" id="generalEmail" name="email" placeholder="your.email@example.com" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Student Form -->
+                    <div class="form-section" id="studentForm">
+                        <h3>Student Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="studentName">
+                                    <i class="fas fa-user"></i>
+                                    First Name *
+                                </label>
+                                <input type="text" id="studentName" name="name" placeholder="Enter your first name">
+                            </div>
+                            <div class="form-group">
+                                <label for="studentSurname">
+                                    <i class="fas fa-user"></i>
+                                    Last Name *
+                                </label>
+                                <input type="text" id="studentSurname" name="surname" placeholder="Enter your last name">
+                            </div>
+                            <div class="form-group">
+                                <label for="studentInstitution">
+                                    <i class="fas fa-university"></i>
+                                    Educational Institution *
+                                </label>
+                                <input type="text" id="studentInstitution" name="institution" placeholder="Enter your school/university name">
+                            </div>
+                            <div class="form-group">
+                                <label for="studentId">
+                                    <i class="fas fa-id-badge"></i>
+                                    Student ID Number *
+                                </label>
+                                <input type="text" id="studentId" name="studentId" placeholder="Enter your student ID number">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="studentIdCard">
+                                    <i class="fas fa-camera"></i>
+                                    Student ID Card Photo *
+                                </label>
+                                <div class="file-upload">
+                                    <input type="file" id="studentIdCard" name="idCardPhoto" accept="image/*">
+                                    <div class="file-upload-display">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span>Click to upload or drag and drop</span>
+                                        <small>PNG, JPG, GIF up to 5MB</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentIdExpiry">
+                                    <i class="fas fa-calendar-times"></i>
+                                    ID Card Expiry Date *
+                                </label>
+                                <input type="date" id="studentIdExpiry" name="idExpiryDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="studentEmail">
+                                    <i class="fas fa-envelope"></i>
+                                    Email Address *
+                                </label>
+                                <input type="email" id="studentEmail" name="email" placeholder="student@university.edu">
+                            </div>
+                            <div class="form-group">
+                                <label for="studentDob">
+                                    <i class="fas fa-calendar"></i>
+                                    Date of Birth *
+                                </label>
+                                <input type="date" id="studentDob" name="dateOfBirth">
+                            </div>
+                            <div class="form-group">
+                                <label for="studentPhone">
+                                    <i class="fas fa-phone"></i>
+                                    Phone Number *
+                                </label>
+                                <input type="tel" id="studentPhone" name="phone" placeholder="123-456-7890">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Store Form -->
+                    <div class="form-section" id="storeForm">
+                        <h3>Store Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="storeOperatorName">
+                                    <i class="fas fa-user-tie"></i>
+                                    Business Operator Name *
+                                </label>
+                                <input type="text" id="storeOperatorName" name="operatorName" placeholder="Enter business operator's name">
+                            </div>
+                            <div class="form-group">
+                                <label for="storeBusinessName">
+                                    <i class="fas fa-building"></i>
+                                    Business Name *
+                                </label>
+                                <input type="text" id="storeBusinessName" name="businessName" placeholder="Enter your business name">
+                            </div>
+                            <div class="form-group">
+                                <label for="storeRegistrationNo">
+                                    <i class="fas fa-certificate"></i>
+                                    Legal Entity Registration Number *
+                                </label>
+                                <input type="text" id="storeRegistrationNo" name="registrationNo" placeholder="Enter registration number">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="storeLegalDocs">
+                                    <i class="fas fa-file-alt"></i>
+                                    Legal Entity Documents *
+                                </label>
+                                <div class="file-upload">
+                                    <input type="file" id="storeLegalDocs" name="legalDocs" accept=".pdf,.doc,.docx" multiple>
+                                    <div class="file-upload-display">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span>Click to upload or drag and drop</span>
+                                        <small>PDF, DOC, DOCX up to 10MB each</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="storeEmail">
+                                    <i class="fas fa-envelope"></i>
+                                    Business Email *
+                                </label>
+                                <input type="email" id="storeEmail" name="email" placeholder="business@company.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="storePhone">
+                                    <i class="fas fa-phone"></i>
+                                    Business Phone *
+                                </label>
+                                <input type="tel" id="storePhone" name="phone" placeholder="123-456-7890">
+                            </div>
+                        </div>
+                        <div class="store-notice">
+                            <i class="fas fa-info-circle"></i>
+                            <p>Store registrations require admin approval. You will be notified via email once your application is reviewed.</p>
+                        </div>
+                    </div>
+
+                    <!-- Password Section -->
+                    <div class="form-section">
+                        <h3>Account Security</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="password">
+                                    <i class="fas fa-lock"></i>
+                                    Password *
+                                </label>
+                                <input type="password" id="password" name="password" placeholder="Enter a strong password" required>
+                                <div class="password-strength">
+                                    <div class="strength-bar"></div>
+                                    <span class="strength-text">Password strength</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">
+                                    <i class="fas fa-lock"></i>
+                                    Confirm Password *
+                                </label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="form-section">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">
+                                I agree to the <a href="#" class="link">Terms and Conditions</a> and <a href="#" class="link">Privacy Policy</a> *
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">
+                                I would like to receive newsletters and promotional offers
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-user-plus"></i>
+                            Create Account
+                        </button>
+                        <p class="login-link">
+                            Already have an account? <a href="#" class="link">Sign in here</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>BookStore</h4>
+                    <p>Your trusted online bookstore for all genres and educational materials.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@bookstore.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BookStore. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
